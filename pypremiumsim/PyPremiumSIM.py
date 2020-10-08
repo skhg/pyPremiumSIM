@@ -32,9 +32,9 @@ class PremiumSimSession:
 
         return csrf
 
-    def __handle_login_response(self, login_result_content, user):
-        expectedLoginString = "<span id=\"LoginName1\">" + user + "</span>"
-        loginFailedString = "Your credentials are incorrect."
+    def __handle_login_response(self, login_result_content):
+        expectedLoginString = "Willkommen in Ihrer persönlichen Servicewelt"
+        loginFailedString = "Die Angaben sind nicht korrekt."
 
         if expectedLoginString.encode() in login_result_content:
             return True
@@ -79,7 +79,7 @@ class PremiumSimSession:
                 '_URLLocalization_Var001': False}
 
             login_response = self.__session.post(login_send_url, data=login_details)
-            return self.__handle_login_response(login_response.content, user)
+            return self.__handle_login_response(login_response.content)
 
         except requests.exceptions.ConnectionError:
             # The most likely failure case is that we're offline so fail gracefully here
