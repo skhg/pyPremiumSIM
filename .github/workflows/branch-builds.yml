@@ -1,0 +1,50 @@
+on:
+  push:
+    branches-ignore:
+      - 'release*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [2.7, 3.6, 3.7, 3.8]
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+
+      - name: "Set up Python ${{ matrix.python-version }}"
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: "Install dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install .
+          pip install codecov
+          pip install flake8
+          pip install flake8-polyfill
+          pip install radon
+
+      - name: "Run code coverage"
+        run: |
+          coverage run ./tests/tests.py
+          codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: "Run flake8"
+        run: |
+          flake8 --ignore=E501
+
+      - name: "Run radon"
+        run: |
+          radon cc ./pypremiumsim/ -a
+          radon mi .
+          radon raw . -s

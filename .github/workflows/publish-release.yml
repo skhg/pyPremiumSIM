@@ -1,0 +1,42 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6]
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+
+      - name: "Set up Python ${{ matrix.python-version }}"
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: "Replace version string with release number"
+        run: |
+          sed -i "s/0.0.0/${VERSION_REF##*/}/g" setup.py
+        env:
+          VERSION_REF: ${{ github.ref }}
+
+      - name: "Install dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install .
+          pip install twine
+
+      - name: "PyPi release"
+        run: |
+          python setup.py sdist
+          twine check dist/*
+          twine upload dist/*
+        env:
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+
