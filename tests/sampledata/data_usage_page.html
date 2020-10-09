@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="de">
+<head id="aea45ab843505c8d3ce56ca494a21">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" media="all"  href="/191851/premiumsim/css/steuerung.less.css.f49c806715666eab80e92f33f6d7808f.css" />
+    <link rel="stylesheet" media="all"  href="/191851/global/css/redmond/jquery-ui.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://imagepool.premiumsim.de//v2/base/favicon/favicon.ico">
+    <!--[if IE]>
+    <style>@import url(/191851/global/css/ie.css);</style>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style>
+        #navi {
+            filter: none !important;
+        }
+    </style>
+    <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet">
+    <script src="/191851/global/js/generatedMain_sie.js" ></script>
+    <!--[if lte IE 9]>
+    <script>
+        // alert('Sie verwenden einen veralteten Browser. Um die Servicewelt nutzen zu können, verwenden Sie bitte einen aktuellen Browser.');
+        $(document).ready( function() {
+            $( "#oldBrowserModal" ).modal('show');
+        });
+    </script>
+    <![endif]-->
+    <title>Persönliche Servicewelt</title>
+    <!-- PAGETAG_showGprsDataUsage_191851 -->
+</head>
+<body id="PageshowGprsDataUsage">
+<!-- Tealium Data Layer - Enthält die benötigten Tracking Informationen -->
+<script>
+    var digitalData = {
+        "page.id" : "",
+        "page.name" : "/mytariff/invoice/showGprsDataUsage",
+        "page.type" : "mytariff",
+        "page.hierarchy" : "mytariff|invoice|showGprsDataUsage",
+        "page.domain" : "service.premiumsim.de",
+        "product.transactionId" : "",
+        "product.category" : "",
+        "product.quantity" : "",
+        "product.productId" : "",
+        "product.productName" : "",
+        "product.eppixTariffId" : "",
+        "product.eppixTariffName" : "",
+        "product.eppixPackageId" : "",
+        "product.eppixPackageName" : "",
+        "product.dataVolume" : "",
+        "product.dataSpeed" : "",
+        "product.hardware.id" : "",
+        "product.hardware.name" : "",
+        "product.hardware.model" : "",
+        "product.hardware.brand" : "",
+        "product.hardware.articleClass" : "",
+        "product.hardware.articleGroup" : "",
+        "product.hardware.colour" : "",
+        "product.price.basicFee" : "",
+        "product.price.effectiveBasicFee" : "",
+        "product.price.serviceFee" : "",
+        "product.price.hardwareOption" : "",
+        "product.price.shipping" : "",
+        "product.price.tax" : "",
+        "product.price.oneTimePayment" : "",
+        "product.price.total" : "",
+        "product.3rd.ecommProdId" : "",
+        "product.3rd.CAcategory" : "",
+        "product.3rd.CAname" : "",
+        "product.3rd.AWparts" : "",
+        "campaign.channel" : "",
+        "campaign.sId" : "",
+        "campaign.partnerId" : "",
+        "campaign.subPartnerId" : "",
+        "campaign.channelId" : "",
+        "campaign.productId" : "",
+        "customer.status" : "customer",
+        "product.price.simBasicFee" : "",
+        "product.price.oneTimeHardware" : "",
+        "product.price.monthlyPayment" : "",
+        "action" : "",
+        "checkout.step" : "",
+        "checkout.name" : "",
+        "customer.intern" : "",
+        "testing.abTestName" : "",
+        "testing.abTestVar" : ""
+    };
+</script>
+<!-- Tealium Container - Skript wird asynchron geladen -->
+<script>
+    (function(a,b,c,d){
+        a='//tags.tiqcdn.com/utag/drillisch/premiumsim.de/prod/utag.js';
+        b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+<div id="loading">
+    <div id="modalMask">
+        <div class="window">
+            <img alt="Laden Icon" title="Laden Icon"
+                 src="/191851/global/img/icon/loading.gif" height="20" width="20" />
+            <br />
+            wird geladen
+        </div>
+    </div>
+</div>
+
+<div id="header-navi" class="headerSubpage container">
+    <div id="header" class="row">
+        <div id="kopf" class="col-md-12">
+            <div id="logoDiv" title="Startseite" alt="Startseite">
+                <a href="/start">
+                    <h1>
+                            <span>
+                                    <img src="https://imagepool.premiumsim.de/sw/images/logo/logo.svg" title="Zur Startseite">
+                            </span>
+                    </h1>
+                </a>
+            </div>
+            <div class="headerUserInfoContainer">
+                <div id="userData" class="UserDateStyle">
+                    <div class="WebLinkHome">
+
+        <span class="logout mb-2">
+                            <span id="logoutTimer" class="btn btn-primary lh">
+
+<div data-link="/renewSession"
+     id="logout-timer-seconds" class="float-right"
+     data-timer="690"
+     data-delay="90">
+    Zeit neu starten | <span id="timer-object">10:00</span>
+</div>
+                </span>
+                        <span id="logoutLink" class="btn btn-primary lh">
+                <a href="#">Logout |
+                                        <img src="https://imagepool.premiumsim.de/global/img/SW/redesign/logout_white.svg" alt="LOGOUT" title="Aus der persönlichen Servicewelt abmelden" />
+                                    </a>
+            </span>
+        </span>
+
+                        <div class="clearfix"></div>
+
+                        <span class="userDataSwitch">        <div id="BaseDiv-SwitchUserType-showGprsDataUsage-3">
+    <script>
+    closeModal();
+</script>
+<form method="post" id="BaseForm-SwitchUserType-showGprsDataUsage-3" data-ajax="false" onsubmit="return false;" autocomplete="off">                                                <div class="userSwitchForm2">
+                <span>
+                    Rufnummer:
+                                        <select id="SwitchUserType_currentSubscriberId" name="SwitchUserType[currentSubscriberId]"    onchange="switchUser(&#039;-SwitchUserType-showGprsDataUsage-3&#039;);" class="form-control"><option value="1">012345678</option><option value="" selected="selected">01234567890</option></select>
+
+
+                    <input type="hidden" id="SwitchUserType_csrf_token" name="SwitchUserType[csrf_token]" value="h6csFkbKz5kcKqoEb0cnKf9zJ8_Isg5v_73sLU5dY0w" />
+                </span>
+            </div>
+
+</form>
+</div>
+    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="">
+        <div id="mainNavi" class="navbar navbar-expand-sm">
+            <ul class="nav mr-auto">
+                <li  class="nav-item">
+                    <a class="nav-link" href="/start">Start</a>
+                </li>
+                <li id="navi1" class="nav-item dropdown first  active">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenuItemText.MeineMarke" role="button" href="#">Vertrag</a>
+                    <div class="dropdown-menu">
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/invoice/showAll"
+                           style=""
+
+                        >Rechnungsansicht</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/tariff/showTariffInfo"
+                           style=""
+
+                        >Tarifdetails</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/invoice/showServicesAndOptions"
+                           style=""
+
+                        >Tarifoptionen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/invoice/showMiscOptionTabRoaming"
+                           style=""
+
+                        >Roaming Option</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/invoice/showGprsDataUsage"
+                           style=""
+
+                        >Datenvolumen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/shop/openExternalTariffChange"
+                           style=""
+                           target="_blank"
+                        >Tarifwechsel</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/order/showOrderDocuments"
+                           style=""
+
+                        >Bestelldokumente</a>
+
+
+                        <a class="dropdown-item"
+                           href="/mytariff/order/status"
+                           style=""
+
+                        >Bestellstatus</a>
+
+                    </div>
+                </li>
+                <li id="navi2" class="nav-item dropdown  ">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenuItemText.Angebote" role="button" href="#">Angebote</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item item-highlight"
+                           href="/zusatzkarte/544"
+                           style=""
+                           target="_blank"
+                        >Zusatzkarte 2 GB für 3,99 Euro</a><a class="dropdown-item item-highlight"
+                                                              href="/bestandskundenangebot/premiumsim/partnerkarte"
+                                                              style=""
+                                                              target="_blank"
+                    >Sparaktion: Familientarife zum Vorteilspreis</a><a class="dropdown-item item-highlight"
+                                                                        href="/bestandskundenangebot/premiumsim/flexibler_partnertarif"
+                                                                        style=""
+                                                                        target="_blank"
+                    >Aktion: Familientarife mit kurzer Laufzeit</a><a class="dropdown-item item-highlight"
+                                                                      href="/bestandskundenangebot/partnerbundle/649"
+                                                                      style=""
+                                                                      target="_blank"
+                    >Vorteilstarife mit Handy</a>
+
+                        <a class="dropdown-item"
+                           href="/shop/openBelatedHardwareOrder"
+                           style=""
+                           target="_blank"
+                        >Handyshop</a>
+
+
+                        <a class="dropdown-item"
+                           href="/shop/openBelatedRefurbishedHardwareOrder"
+                           style=""
+                           target="_blank"
+                        >Handys aus Rücksendungen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/service/friends/showFriends"
+                           style=""
+
+                        >Freunde werben</a>
+
+
+                        <a class="dropdown-item"
+                           href="/shop/openExternalWebshop"
+                           style=""
+                           target="_blank"
+                        >Weitere Tarife bestellen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/shop/openExternalWebshopRequestOffer"
+                           style=""
+                           target="_blank"
+                        >Weitere Tarife mit Handys bestellen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/service/showRobinson"
+                           style=""
+
+                        >Infoservice</a>
+
+                    </div>
+                </li>
+                <li id="navi3" class="nav-item dropdown  ">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenuItemText.Services" role="button" href="#">Services</a>
+                    <div class="dropdown-menu">
+
+
+                        <a class="dropdown-item"
+                           href="/service/showMultiCard#info"
+                           style=""
+
+                        >MultiCard</a>
+
+
+                        <a class="dropdown-item"
+                           href="/service/showAlternateSim#bestellen"
+                           style=""
+
+                        >Ersatzkarte</a>
+
+
+                        <a class="dropdown-item"
+                           href="/handyversicherung"
+                           style=""
+
+                        >Handyversicherung</a>
+
+
+                        <a class="dropdown-item"
+                           href="/service/showSimDeactivation#sperren"
+                           style=""
+
+                        >SIM-Karte sperren</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/repair"
+                           style=""
+
+                        >Reparaturservice</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/showPhoneNumberExchange"
+                           style=""
+
+                        >Rufnummer tauschen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/showIncomingMnp"
+                           style=""
+
+                        >Rufnummer mitbringen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/mnp"
+                           style=""
+
+                        >Rufnummer mitnehmen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/retoure"
+                           style=""
+
+                        >Rücksendung</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/showReserveTerminationStart"
+                           style=""
+
+                        >Kündigung vormerken</a>
+
+                    </div>
+                </li>
+                <li id="navi4" class="nav-item dropdown  ">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenuItemText.MeineDaten" role="button" href="#">Kundendaten</a>
+                    <div class="dropdown-menu">
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showContractOwner"
+                           style=""
+
+                        >Vertragsinhaber</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showChangeUserAddress"
+                           style=""
+
+                        >Nutzerdaten</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showChangeAddress"
+                           style=""
+
+                        >Anschrift</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showChangeBankAccount"
+                           style=""
+
+                        >Bankdaten</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showChangeEMail"
+                           style=""
+
+                        >E-Mail-Adresse</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/changePassword/show"
+                           style=""
+
+                        >Zugangsdaten</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showHotlinePassword"
+                           style=""
+
+                        >Hotline-Kennwort</a>
+
+
+                        <a class="dropdown-item"
+                           href="/myData/showPinPuk"
+                           style=""
+
+                        >PIN und PUK</a>
+
+                    </div>
+                </li>
+                <li id="navi5" class="nav-item dropdown last ">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenuItemText.HilfeFaq" role="button" href="#">Hilfe und Kontakt</a>
+                    <div class="dropdown-menu">
+
+
+                        <a class="dropdown-item"
+                           href="/services/firststeps"
+                           style=""
+
+                        >Erste Schritte</a>
+
+
+                        <a class="dropdown-item"
+                           href="/services/usermanual"
+                           style=""
+
+                        >Bedienungsanleitungen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showGeraeteeinstellungen"
+                           style=""
+
+                        >SIM-Karten-Einstellungen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showHandyeinstellungen"
+                           style=""
+
+                        >Geräteeinstellungen</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showNetworkCoveragetwo"
+                           style=""
+
+                        >Netzabdeckung</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showNetworkCoverage"
+                           style=""
+
+                        >Netzverfügbarkeit</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showFaq"
+                           style=""
+
+                        >Häufige Fragen und Antworten</a>
+
+
+                        <a class="dropdown-item"
+                           href="/help/showFaq/neueFrageStellen"
+                           style=""
+
+                        >Kontaktformular</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="nmchat" style="display: none">
+    <a href="https://chat.premiumsim.de/client_drillisch_premiumsim/popup.html?lang=service-chat&cat=premiumsim_Servicechat&nm_subscriberID=12345678&nm_subscriberNAME=User Name&nm_subscriberMSISDN=0123456789&nm_device=desktop" target="liveChat" data-options="width=450, height=600, menubar=no, location=no, resizable=yes, scrollbars=no, status=no" data-cat="premiumsim_Servicechat" data-marke="premiumsim" data-markedomain="chat.premiumsim.de" id="open-livechat-button"><div><img src="https://imagepool.premiumsim.de/global/img/SW/redesign/live_chat_weiss.svg" alt="Live-Chat"><p>Chat</p></div></a>
+</div>
+<div id="mainContainer" class="container">
+    <div id="designContent" class="">
+        <div id="content2" class="row">
+
+            <div class="col-md-12">
+                <div id="mainShowDataUsageContent" class="customAccordionHeader">
+                    <h2>Datenvolumen</h2>
+                    <p>Hier finden Sie Informationen über Ihr Datenvolumen.</p>
+                    <ul class="nav nav-tabs flex-column flex-sm-row" id="dataUsageTabs" role="tablist">
+                        <li class="nav-item">
+                            <a href="#currentMonth" class="nav-link active noLoadingAnimation" data-toggle="tab">Aktueller Monat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#previousMonth" id="showDataUsagePreviousMonth" class="nav-link noLoadingAnimation" data-toggle="tab">Letzter Monat</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="GPRSzusatzoptionen">
+                        <div class="tab-pane fade show active" id="currentMonth">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="dataUsageChart">
+                                        <canvas id="dataUsage-0-1" class="dataUsage-1" width="310" height="310"></canvas>
+                                        <canvas id="dataUsage-0-2" class="dataUsage-2" width="310" height="310"></canvas>
+                                        <div class="dataUsageOverlay">
+                                            <div class="dataUsageOverlayInner">
+                    <span class="used">
+                        <div class="line">
+                            749,04 MB
+                        </div>
+                        <div class="line">
+                            3,7 %
+                        </div>
+                                                <div class="total">
+                            verbraucht
+                        </div>
+                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 dataUsageLegend">
+                                    <h5>Verfügbares Datenvolumen</h5>
+                                    <div>
+                                        <span class="dataBlob inclusive"></span>Inklusives Datenvolumen 20,00 GB
+                                    </div>
+                                </div>
+                                <div class="col-md-4 dataUsageLegend">
+                                    <h5 class="">Verbrauchtes Datenvolumen</h5>
+                                    <div>
+                                        <span class="dataBlob usage"></span>Inklusives Datenvolumen 749,04 MB
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function() {
+                                    var context = document.getElementById("dataUsage-0-1");
+                                    var data = {
+                                        datasets: [{
+                                            data: [
+                                                767020,
+                                                20204501
+                                            ],
+                                            backgroundColor: ["#333333","#eeeeee"],
+                                            borderWidth: [0,0],
+                                        }],
+                                    };
+                                    var options = {
+                                        legend: {
+                                            display: false,
+                                        },
+                                        tooltips: {
+                                            enabled: false,
+                                        },
+                                        cutoutPercentage: 67,
+                                        events: []
+                                    };
+                                    var dataUsageChart = new Chart(context, {
+                                        type: 'doughnut',
+                                        data: data,
+                                        options: options
+                                    });
+
+                                    var context2 = document.getElementById("dataUsage-0-2");
+                                    var data2 = {
+                                        datasets: [{
+                                            data: [
+                                                20971521,
+                                            ],
+                                            backgroundColor: [
+                                                "#FF293F"
+                                            ],
+                                            borderWidth: [
+                                                2,                ],
+                                            borderColor: [
+                                                "#ffffff",                ]
+                                        }],
+                                    };
+                                    var options2 = {
+                                        legend: {
+                                            display: false,
+                                        },
+                                        tooltips: {
+                                            enabled: false,
+                                        },
+                                        cutoutPercentage: 85,
+                                        events: []
+                                    };
+                                    var dataUsageChart = new Chart(context2, {
+                                        type: 'doughnut',
+                                        data: data2,
+                                        options: options2
+                                    });
+                                });
+                            </script>
+
+
+
+
+                            <div class="rahmenMarkeSymbol">
+                                <img class="size2 floatL floatLM" src="https://imagepool.premiumsim.de/global/img/SW/redesign/info.svg">Ab Erreichen des verfügbaren Datenvolumens wird die Datenübertragungsgeschwindigkeit im jeweiligen Monat entsprechend den Tarifbedingungen reduziert.<br>Die Verbrauchsanzeige wird nicht in Echtzeit aktualisiert. Je nach Tageszeit wird die Verbrauchsanzeige gegebenenfalls später aktualisiert.
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="previousMonth">
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        loadGprsDataUsage('/mytariff/invoice/requestGprsDataUsage/-1');
+                    });
+                </script>
+            </div>
+            <div id="teaser_gross_container" class="col-md-12 carousel slide carousel-fade" data-ride="">
+                <div class="carousel-inner">
+                </div>
+                <div class="margeBot15"></div>             </div>
+            <script>
+                $(document).ready( function() {
+                    $('.carousel').carousel({
+                        interval : 4000,
+                    });
+                });
+            </script>
+            <!--// Teaser //-->
+            <div class="grid_16 alpha">
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footerTextColor collapse" id="footnotes">
+                    <ol>
+
+                    </ol>
+                    <div id="fussnotenInhalt2"></div>
+                </div>
+                <div class="linie">
+
+                    <div class="footernavi footernaviextracolor">
+                        <div class="navi-item fussnotenlink">
+                            <a href="https://www.PremiumSIM.de" target="_blank"
+                               class="websiteLink">PremiumSIM Webseite</a>
+                        </div>
+                        <div class="navi-item fussnotenlink-Datenschutz">
+                            <a href="/privacyinfo" target="_blank">Datenschutz</a>
+                        </div>
+                        <div class="navi-item fussnotenlink-Impressum">
+                            <a href="/impressum" >Impressum</a>
+                        </div>
+                        <div class="navi-item">
+                            <a href="#" id="deinCoronaLink">Corona-Pandemie</a>
+                        </div>
+                    </div>
+                    <div class="modal fade" id='coronaLayer' tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Corona-Pandemie</h5>
+                                </div>
+                                <div class="modal-body">
+                                    20. März 2020<br><h2>Maßnahmen der Drillisch Online GmbH und PremiumSIM zum Umgang mit der Corona-Pandemie</h2><p>Mit diesem Beitrag möchten wir Sie informieren, wie die Drillisch Online GmbH mit der aktuellen Corona-Pandemie umgeht. Wir verfolgen die Entwicklungen bereits seit Anfang des Jahres und haben unsere Notfallpläne regelmäßig angepasst. Dabei stehen die Aufrechterhaltung unserer Mobilfunkdienstleistungen sowie die Gesundheit unserer Mitarbeiter und Partner im Vordergrund.</p> <h3>Kundenservice</h3><p>Unser Kundenservice arbeitet von verschiedenen geographisch getrennten Standorten, die bei Bedarf gegenseitig Aufgaben übernehmen können. Im Rahmen der Arbeitsorganisation stellen wir sicher, dass ausreichende Kapazitäten für die Beantwortung von Kundenanfragen zur Verfügung stehen.</p><h3>Netzkapazität</h3><p>Die mobilen Netze unseres Netzpartners sind einer möglichen Zunahme der mobilen Datennutzung gewachsen. Zudem stehen wir mit unseren Partnern auf allen Ebenen fortlaufend in einem sehr engen Austausch, um zu jeder Zeit eine mobile Versorgung für unsere Kunden gewährleisten zu können.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                        Schließen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $('#deinCoronaLink').click(function () {
+                                $("#coronaLayer").modal('show');
+                            });
+                        });
+                    </script>                        <p class="footerhinweis">Preisangaben inkl. MwSt.<br />Irrtümer und Änderungen vorbehalten.</p>
+                    <div class="margeTop20 margeBot20">
+                        <a href="#" id="DeineCoronaApp"><img src="https://imagepool.premiumsim.de/global/service/banner/standard/corona_warn_app_1_1110x140.jpg" alt="Corona-Warn-App" title="Corona-Warn-App" class="width100"/></a>
+                    </div>
+                    <div class="modal fade" id='coronaLayerApp' tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Information</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Sie werden zu der Webseite der Bundesregierung weitergeleitet.
+                                    <br><br>
+                                    Wenn Ihr Endgerät zu alt ist und daher die App nicht installieren kann, dann schauen Sie in Ihrer persönlichen Servicewelt im Handyshop unter <b>Angebote</b> nach unseren attraktiven Smartphones.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                                    <a href="https://www.bundesregierung.de/breg-de/themen/corona-warn-app" id="coronalLayerAppClose" target="_blank" class="btn btn-primary text-white">Weiter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready( function() {
+                            $('#DeineCoronaApp').click(function() {
+                                $("#coronaLayerApp").modal('show');
+                            });
+                            $('#coronalLayerAppClose').click(function() {
+                                $("#coronaLayerApp").modal('hide');
+                            });
+
+                        });
+
+                    </script>                        <div id="scrollToFooter"></div>
+                    <div class="apple_overlay" id="overlay">
+                        <div class="contentWrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="globalImageAktiv" class="none">
+    <span class="activStatus">aktiv</span>
+</div>
+<div id="globalImageDeaktiv" class="none">
+    <span class="activStatus">inaktiv</span>
+</div>
+<div id="globalImageAchtung" class="none">
+    <span class="activStatus">Achtung</span>
+    <img alt="Achtung Icon" title="Achtung Icon" src="/191851/global/img/icon/achtung.png">
+</div>
+<!-- TR_DATA -->
+<script src="/public/getUserFaqAssetFile/trademark/66eae40f8f28031883c60d9b140a9791e26afb6d.js"></script>
+<script>
+    $(document).ready( function() {
+        $("body").on("click", ".info img, .info a, .info2 img, .info3 img, .info3 a, .info4 img", function() {
+            var tooltipContent = $(this).data("tooltip");
+            var tooltipHeadline = $(this).data("headline");
+            $(".overlayTooltipContent").html(tooltipContent);
+            if (tooltipHeadline) {
+                $(".overlayTooltipHeadline").html(tooltipHeadline);
+            } else {
+                $(".overlayTooltipHeadline").html("Information");
+            }
+            $( "#infoModal" ).modal('show');
+        });
+
+        $('#logoutLink').click(function() {
+            $( "#logoutModal" ).modal('show');
+        });
+    });
+</script>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title overlayTooltipHeadline">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="overlayTooltipContent">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabelLogout" style="border-bottom: none;">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Über <b>Logout</b> melden Sie sich aus Ihrer persönlichen Servicewelt ab.
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Abbrechen
+                </button>
+
+                <a id="logoutButton" href="/public/prelogout" class="btn btn-primary">Logout</a>
+
+            </div>
+
+
+
+            <div class="themen d-flex flex-row justify-content-center">
+
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/MeineMarke" target="_parent">
+                        <ul>
+                            <li class="vertragWhite">
+                                <p class="text-center">Vertrag</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/Angebote" target="_parent">
+                        <ul>
+                            <li class="angeboteWhite">
+                                <p class="text-center">Angebote</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/Services" target="_parent">
+                        <ul>
+                            <li class="servicesWhite">
+                                <p class="text-center">Services</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/MeineDaten" target="_parent">
+                        <ul>
+                            <li class="kundendatenWhite">
+                                <p class="text-center">Kundendaten</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/HilfeFaq" target="_parent">
+                        <ul>
+                            <li class="hilfeWhite">
+                                <p class="text-center">Hilfe</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="oldBrowserModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabelBrowser" style="border-bottom: none;">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Sie verwenden einen veralteten Browser. Um die Servicewelt nutzen zu können, verwenden Sie bitte einen aktuellen Browser.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

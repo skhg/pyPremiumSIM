@@ -1,6 +1,5 @@
 import unittest
-import sys
-from pypremiumsim import PremiumSimSession
+from pypremiumsim import PremiumSimSession, DataVolume
 
 sampledatadir = "./tests/sampledata/"
 
@@ -15,7 +14,7 @@ class TestLoginMethod(unittest.TestCase):
 
             csrf = session._PremiumSimSession__get_csrf_for_login(login_page)
 
-            self.assertEqual(csrf, "dlGf6vnkuJo3PHony6q34k9pjvBACb9af0bLruyjxRw")
+            self.assertEqual(csrf, "TWtsHpuDAK6BCvFqQJhQNQtK_ffHfvwiVkkXeLmyvcg")
 
     def test_handle_login_response_good_response_returns_true(self):
         session = PremiumSimSession()
@@ -37,6 +36,17 @@ class TestLoginMethod(unittest.TestCase):
                 session._PremiumSimSession__handle_login_response(failed_login)
 
             self.assertTrue('Your credentials are incorrect' in str(context.exception))
+
+    def test_handle_data_usage_response_parses_content(self):
+        session = PremiumSimSession()
+
+        with(open(sampledatadir + "data_usage_page.html", "r")) as f:
+            page = f.read()
+            result = session._PremiumSimSession__handle_data_usage_response(page)
+
+            expected = DataVolume(u"20,00 GB", u"749,04 MB", u"3,7 %")
+
+            self.assertEqual(result.__dict__, expected.__dict__)
 
 if __name__ == '__main__':
     unittest.main()
