@@ -5,7 +5,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 class PremiumSimSession:
 
     def __init__(self):
@@ -13,22 +12,21 @@ class PremiumSimSession:
         self.__session = requests.session()
         self.__parser_name = "html.parser"
 
-        headers = {'Connection': 'keep-alive',
-                   'Accept-Encoding': 'gzip, deflate',
-                   'Accept': '*/*',
-                   'User-agent': 'Mozilla/5.0 (comptabile)'}
-
-        self.__session.headers = headers
-
     def __login_page_url(self):
         return self.__premiumsim_service_url + "/"
 
     def __login_validation_url(self):
         return self.__premiumsim_service_url + "/public/login_check"
 
+    def __login_page_tokens(self, login_page_response):
+        csrf = self.__get_csrf_for_login(login_page_response.content)
+        sid = login_page_response.cookies["_SID"]
+
+        return csrf, sid
+
     def __get_csrf_for_login(self, login_page_content):
         login_page_soup = BeautifulSoup(login_page_content, self.__parser_name)
-        csrf = login_page_soup.find(id="SendPasswordNotificationType_csrf_token")['value']
+        csrf = login_page_soup.find(id="UserLoginType_csrf_token")['value']
 
         return csrf
 
@@ -45,41 +43,23 @@ class PremiumSimSession:
 
     def try_login(self, user, passwd):
         login_page_response = self.__session.get(self.__login_page_url())
-        login_page_soup = BeautifulSoup(login_page_response.content, self.__parser_name)
+        captured_csrf, captured_sid = self.__login_page_tokens(login_page_response)
 
-        login_send_url = self.login_url()
         try:
-            login_form_response = self.__session.get(login_send_url)
-            soup = BeautifulSoup(login_form_response.content, "html.parser")
+            payload = {
+                'UserLoginType[alias]': user,
+                'UserLoginType[password]': passwd,
+                'UserLoginType[logindata]': '',
+                'UserLoginType[csrf_token]': captured_csrf,
+                '_SID': captured_sid
+            }
 
-            VIEWSTATE = soup.find(id="__VIEWSTATE")['value']
-            VIEWSTATEGENERATOR = soup.find(id="__VIEWSTATEGENERATOR")['value']
-            EVENTVALIDATION = soup.find(id="__EVENTVALIDATION")['value']
-            EVENTTARGET = soup.find(id="__EVENTTARGET")['value']
-            EVENTARGUMENT = soup.find(id="__EVENTARGUMENT")['value']
-            SCROLLPOSITIONX = soup.find(id="__SCROLLPOSITIONX")['value']
-            SCROLLPOSITIONY = soup.find(id="__SCROLLPOSITIONY")['value']
-            VIEWSTATEENCRYPTED = soup.find(id="__VIEWSTATEENCRYPTED")['value']
-            PREVIOUSPAGE = soup.find(id="__PREVIOUSPAGE")['value']
+            login_validation_request = requests.Request('POST',  self.__login_validation_url(), data=payload)
+            prepared_login_request = self.__session.prepare_request(login_validation_request)
 
-            login_details = {
-                "__VIEWSTATE": VIEWSTATE,
-                "__VIEWSTATEGENERATOR": VIEWSTATEGENERATOR,
-                "__EVENTVALIDATION": EVENTVALIDATION,
-                "__EVENTTARGET": EVENTTARGET,
-                "__EVENTARGUMENT": EVENTARGUMENT,
-                "__SCROLLPOSITIONX": SCROLLPOSITIONX,
-                "__SCROLLPOSITIONY": SCROLLPOSITIONY,
-                "__VIEWSTATEENCRYPTED": VIEWSTATEENCRYPTED,
-                "__PREVIOUSPAGE": PREVIOUSPAGE,
-                'ctl00$ContentPlaceHolder1$UserName': user,
-                'ctl00$ContentPlaceHolder1$Password': passwd,
-                'ctl00$ContentPlaceHolder1$btnlogin': "Login",
-                'AjaxScriptManager_HiddenField': '',
-                '_URLLocalization_Var001': False}
+            login_validation_response = self.__session.send(prepared_login_request)
 
-            login_response = self.__session.post(login_send_url, data=login_details)
-            return self.__handle_login_response(login_response.content)
+            return self.__handle_login_response(login_validation_response.content)
 
         except requests.exceptions.ConnectionError:
             # The most likely failure case is that we're offline so fail gracefully here
