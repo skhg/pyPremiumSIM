@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="de">
+<head id="1ecd8a6b45bbd3bf46ccb4395b372522">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" media="all"  href="/191144/premiumsim/css/steuerung.less.css.f49c806715666eab80e92f33f6d7808f.css" />
+    <link rel="stylesheet" media="all"  href="/191144/global/css/redmond/jquery-ui.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://imagepool.premiumsim.de//v2/base/favicon/favicon.ico">
+    <!--[if IE]>
+    <style>@import url(/191144/global/css/ie.css);</style>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style>
+        #navi {
+            filter: none !important;
+        }
+    </style>
+    <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet">
+    <script src="/191144/global/js/generatedMain_sie.js" ></script>
+    <!--[if lte IE 9]>
+    <script>
+        // alert('Sie verwenden einen veralteten Browser. Um die Servicewelt nutzen zu können, verwenden Sie bitte einen aktuellen Browser.');
+        $(document).ready( function() {
+            $( "#oldBrowserModal" ).modal('show');
+        });
+    </script>
+    <![endif]-->
+    <title>Persönliche Servicewelt</title>
+    <!-- PAGETAG_login_191144 -->
+    <link rel="canonical" href="https://service.premiumsim.de/">        <!-- manifest -->
+    <!-- manifest global  -->    </head>
+<body id="Pagelogin">
+<div id="loading">
+    <div id="modalMask">
+        <div class="window">
+            <img alt="Laden Icon" title="Laden Icon"
+                 src="/191144/global/img/icon/loading.gif" height="20" width="20" />
+            <br />
+            wird geladen
+        </div>
+    </div>
+</div>
+<div id="header-navi" class="container">
+    <div class="d-none">
+        <div data-link="/renewSession"
+             id="logout-timer-seconds" class="float-right"
+             data-timer="690"
+             data-delay="90">
+            Zeit neu starten | <span id="timer-object">10:00</span>
+        </div>
+    </div>
+    <div id="header" class="row">
+        <div id="kopf" class="kopfLogin col-md-9">
+            <a href="https://service.premiumsim.de/">
+                <div class="" id="logoDivPublic">
+                            <span>
+                                <img src="https://imagepool.premiumsim.de/sw/images/logo/logo.svg" title="Zur Startseite">
+                            </span>
+                </div>
+            </a>
+
+
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="headerUserInfoContainer">
+                <div id="userData" class="UserDateStyle">
+                    <div class="WebLinkHome">
+
+        <span class="login mb-2">
+
+                <span title="Zur persönlichen Servicewelt" id="loginLink" class="btn btn-primary mt-2 lh">
+                    <a  href="https://service.premiumsim.de/" target="_parent">
+                        Login | <img src="https://imagepool.premiumsim.de/global/img/SW/redesign/avatarA.svg" class="loginAvatar" alt="LOGIN" title="Zur persönlichen Servicewelt" />
+                    </a>
+                </span>
+
+        </span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="mainNavi" class="navbar navbar-expand-sm">
+        <ul class="nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.premiumsim.de"
+                   target="_blank">Tarife</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.premiumsim.de/configurator/handys"
+                   target="_blank">Handyshop</a>
+            </li>
+            <li class="nav-item mr-auto">
+                <a class="nav-link" href="https://service.premiumsim.de/public/showFaq"
+                   target="_parent">Service & Info</a>
+            </li>
+        </ul>
+        <ul class="nav">
+        </ul>
+    </nav>
+</div>
+<div id="mainContainer" class="container mainContainerPublic">
+    <div id="designContent" class="designStart">
+        <div class="claimsw hide">
+
+        </div>
+        <div id="content" class="row">
+            <div class="col-md-12">
+                <img src="https://imagepool.premiumsim.de/global/service/banner/standard/banner_login-seite_0_1110x140.jpg" alt="" title="" class="loginBannerRedesign" />
+            </div>
+            <div class="col-md-12">
+                <h2 class="loginHead">Persönliche Servicewelt</h2>
+                <p>Geben Sie Ihre Zugangsdaten ein.</p>
+            </div>
+            <div class="col-md-6">
+                <div id="loginForm" class="formdiv">
+                    <div id="login" class="collapse show" data-parent="#loginForm">
+                        <div class="modal fade" id="CookieInfo" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Information</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        In Ihrem Internet-Browser sind Cookies nicht aktiviert. Damit Sie sich in Ihre persönliche Servicewelt anmelden können, müssen in Ihrem Internet-Browser Cookies aktiviert sein. Nähere Informationen zum Aktivieren von Cookies, finden Sie in der Menü-Hilfe Ihres Internet-Browsers.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" >Schließen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready( function() {
+                                //$.cookie('isCookieAllowed', 'true');
+                                document.cookie = "isCookieAllowed=true; secure; samesite=lax";
+                                if (document.cookie.indexOf("isCookieAllowed") < 0) {
+                                    $('#CookieInfo').modal('show');
+                                }
+                                $("#openPasswordNotification").click(function(e){
+                                    e.preventDefault();
+                                    $("#sendPasswordNotificationDiv").collapse('show');
+                                });
+                            });
+                        </script>
+
+                        <form method="post" action="/public/login_check" id="loginAction" data-ajax="false" autocomplete="off"><input type="hidden" name="_SID" value="0uf5sgpfbmdjeot05vhcvmb1r7" />
+                            <fieldset>
+                                <p class="loginTextFirst" id="loginText2">Bitte geben Sie Ihre Rufnummer und Ihr Online-Passwort ein</p>
+                                <ol class="clearfix">
+                                    <li class="LoginNutzer">
+                                        <label for="UserLoginType_alias" class="loginNutzer">Benutzername:<br><span class="unbold faqMobileFon">oder Rufnummer, sofern kein Benutzername angelegt wurde</span></label>
+                                        <input type="text" id="UserLoginType_alias" name="UserLoginType[alias]" required="required"    tabindex="1" class="form-control" />
+
+                                        <span class="info3 info1">
+                                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihren Benutzernamen ein. Achten Sie auf Groß- und Kleinschreibung. Ihren Benutzernamen haben wir Ihnen nach Ihrer Online-Bestellung an Ihre bei uns hinterlegte E-Mail-Adresse gesendet. Wenn für Ihre Rufnummer noch kein Benutzername existiert, dann geben Sie Ihre Rufnummer ohne Leerzeichen oder Bindestrich ein. Beispiel: 01761234567" />
+                            </span>
+                                        <span class="info3" id="info1b">
+                                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie hier bitte Ihre Rufnummer ein" />
+                            </span>
+                                    </li>
+                                    <li class="LoginRememberUsername" id="saveAliasShow">
+                                        <input type="checkbox" id="UserLoginType_rememberUsername" name="UserLoginType[rememberUsername]"    class="radio" value="1" />
+                                        <label style="display: inline-block; font-weight: normal;" for="UserLoginType_rememberUsername">Benutzername merken</label>
+                                        <span class="info3 ConTooltip BenutzernameMerken">
+                                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Durch die Funktion wird zukünftig Ihr Benutzername automatisch in dem Feld angezeigt, ohne dass Sie Ihren Benutzernamen erneut eingeben müssen."/>
+                            </span>
+
+                                    </li>
+                                    <li class="LoginPass">
+                                        <label for="UserLoginType_password" class="required">Online-Passwort:</label>
+                                        <input type="password" id="UserLoginType_password" name="UserLoginType[password]" required="required"    tabindex="2" class="form-control" />
+
+                                        <span class="info3" id="info2">
+                                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihr Online-Passwort ein. Achten Sie auf Groß- und Kleinschreibung. Wenn Sie sich das erste Mal in Ihre persönliche Servicewelt anmelden, dann verwenden Sie als Online-Passwort das Hotline-Kennwort aus Ihrer Bestellung." />
+                            </span>
+                                        <span class="info3" id="info2b">
+                                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie hier bitte das von Ihnen vergebene Kennwort aus Ihrer Bestellung ein. Bitte achten Sie auf die Groß- und Kleinschreibung." />
+                            </span>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="klartext" class="radio">Online-Passwort als Klartext anzeigen
+                                    </li>
+                                    <li class="right2" id="loginButton">
+                                        <div id="buttonLogin" class="button1">
+                                            <button class="btn btn-primary submitOnEnter" onclick="submitForm('loginAction');" tabindex="3">
+                                                Login</button>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </fieldset>
+                            <p class="link loginlinks infocolor"><a href="#lostLoginNameDiv" data-toggle="collapse">Benutzername vergessen?</a></p>
+                            <p class="link loginlinks infocolor"><a href="#sendPasswordNotificationDiv" data-toggle="collapse">Online-Passwort vergessen?</a></p>
+                            <div class="none">
+                                <input type="hidden" id="UserLoginType_logindata" name="UserLoginType[logindata]" /><input type="hidden" id="UserLoginType_csrf_token" name="UserLoginType[csrf_token]" value="TWtsHpuDAK6BCvFqQJhQNQtK_ffHfvwiVkkXeLmyvcg" />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="sendPasswordNotificationDiv" class="collapse" data-parent="#loginForm">
+                        <div class="">
+                            <fieldset><legend>Online-Passwort vergessen</legend></fieldset>
+                        </div>
+                        <div id="BaseDiv-SendPasswordNotificationType-login-0">
+                            <script>
+                                closeModal();
+                            </script>
+                            <form method="post" id="BaseForm-SendPasswordNotificationType-login-0" data-ajax="false" onsubmit="return false;" autocomplete="off"><input type="hidden" name="_SID" value="0uf5sgpfbmdjeot05vhcvmb1r7" />
+                                <p class="both">Hier können Sie sich ein neues Online-Passwort zusenden lassen.
+                                    <br>
+                                    <a class="infocolor collapsed" data-toggle="collapse" href="#collapseInfos" role="button" aria-expanded="false" aria-controls="collapseInfos">
+                                        <u class="collapse-toggle_text--collapsed">Mehr Infos</u>
+                                        <u class="collapse-toggle_text">Weniger Infos</u>
+                                    </a>
+                                </p>
+
+                                <div class="collapse" id="collapseInfos">
+                                    <div class="card card-body">
+                                        Wenn Sie sich das erste Mal in Ihre persönliche Servicewelt anmelden, dann verwenden Sie als Online-Passwort das Hotline-Kennwort aus Ihrer Bestellung. Wenn Sie Ihr Online-Passwort (oder das Hotline-Kennwort) nicht mehr kennen, dann können Sie sich ein neues Online-Passwort zusenden lassen. Wenn Sie die Standardeinstellung in Ihrer persönlichen Servicewelt nicht geändert haben, dann wird das neue Online-Passwort standardmäßig an Ihre bei uns hinterlegte E-Mail-Adresse gesendet. Wenn für Ihre Rufnummer keine E-Mail-Adresse bei uns hinterlegt ist, dann wird das neue Online-Passwort standardmäßig per SMS an Ihre Rufnummer gesendet.
+                                    </div>
+                                </div>
+
+
+                                <fieldset>
+                                    <ol class="clearfix">
+                                        <li class="LoginUsername">
+                                            <label for="SendPasswordNotificationType_aliasOrMsisdn" class="passNot">Benutzername:<br><span style="font-size: 0.8em;" class="unbold">oder Rufnummer, sofern kein Benutzername angelegt wurde</span></label>
+                                            <span id="PasswortVergessenRufnummer" class="none"><label for="SendPasswordNotificationType_aliasOrMsisdn" class="required"></label> <b>Bitte geben Sie Ihre Rufnummer ein:</b></span>
+                                            <input type="text" id="SendPasswordNotificationType_aliasOrMsisdn" name="SendPasswordNotificationType[aliasOrMsisdn]" required="required"    class="form-control" />
+
+                                            <span class="info3 ConTooltip">
+                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihren Benutzernamen ein. Achten Sie auf Groß- und Kleinschreibung. Ihren Benutzernamen haben wir Ihnen nach Ihrer Online-Bestellung an Ihre bei uns hinterlegte E-Mail-Adresse gesendet. Wenn für Ihre Rufnummer noch kein Benutzername existiert, dann geben Sie Ihre Rufnummer ohne Leerzeichen oder Bindestrich ein. Beispiel: 01761234567" />
+            </span>
+                                        </li>
+                                        <li>
+                                            <span><label for="SendPasswordNotificationType_zipCode" class="required">Postleitzahl:</label></span>
+                                            <input type="text" id="SendPasswordNotificationType_zipCode" name="SendPasswordNotificationType[zipCode]" required="required"    class="form-control" />
+
+                                            <span class="info3 ConTooltip">
+                <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihre bei uns hinterlegte Postleitzahl ein." />
+            </span>
+                                        </li>
+                                        <li class="clearfix"></li>
+                                        <li>
+
+
+
+                                            <div class="button1" >
+                                                <a class="btn btn-primary float-right submitOnEnter"
+                                                   id="ButtonOnline-Passwortzusenden-SendPasswordNotificationType-login-0"
+                                                   href="#"
+                                                   onclick="sendPostAndReplaceContent('/public/passwordNotification/send', 'BaseForm-SendPasswordNotificationType-login-0', true);"
+                                                   title="">
+                                                    Online-Passwort zusenden
+                                                </a>
+                                            </div>
+
+
+                                        </li>
+                                    </ol>
+                                </fieldset>
+                                <p class="link loginlinks"><a href="#login" class="infocolor" data-toggle="collapse"><span>Zurück zum Login</span></a></p>
+                                <script>
+                                    $(document).ready( function() {
+                                        executeAfterPartialReload();
+                                    });
+                                </script>
+                                <input type="hidden" id="SendPasswordNotificationType_csrf_token" name="SendPasswordNotificationType[csrf_token]" value="dlGf6vnkuJo3PHony6q34k9pjvBACb9af0bLruyjxRw" />
+                            </form>
+                        </div>
+
+
+                    </div>
+                    <div id="lostLoginNameDiv" class="collapse" data-parent="#loginForm">
+                        <div class="">
+                            <fieldset><legend>Benutzername vergessen</legend></fieldset>
+                        </div>
+                        <div id="BaseDiv-LostLoginNameType-login-1">
+                            <script>
+                                closeModal();
+                            </script>
+                            <form method="post" id="BaseForm-LostLoginNameType-login-1" data-ajax="false" onsubmit="return false;" autocomplete="off"><input type="hidden" name="_SID" value="0uf5sgpfbmdjeot05vhcvmb1r7" />
+                                <p class="both">Hier können Sie sich Ihren Benutzernamen anzeigen lassen.
+                                    <br>
+                                    <a class="infocolor collapsed" data-toggle="collapse" href="#collapseInfos1" role="button" aria-expanded="false" aria-controls="collapseInfos">
+                                        <u class="collapse-toggle_text--collapsed">Mehr Infos</u>
+                                        <u class="collapse-toggle_text">Weniger Infos</u>
+                                    </a>
+                                </p>
+
+                                <div class="collapse" id="collapseInfos1">
+                                    <div class="card card-body">
+                                        Ihren Benutzernamen haben wir Ihnen nach Ihrer Online-Bestellung an Ihre bei uns hinterlegte E-Mail-Adresse gesendet. Wenn Sie Ihren Benutzernamen nicht mehr kennen, dann können Sie sich Ihren Benutzernamen anzeigen lassen. Wenn für Ihre Rufnummer noch kein Benutzername existiert, dann verwenden Sie für die Anmeldung in Ihre persönliche Servicewelt Ihre Rufnummer.
+                                    </div>
+                                </div>
+
+                                <fieldset>
+                                    <ol class="clearfix">
+                                        <li>
+                                            <label for="LostLoginNameType_msisdn" class="required">Rufnummer:</label>
+                                            <input type="text" id="LostLoginNameType_msisdn" name="LostLoginNameType[msisdn]" required="required"    class="form-control" />
+
+                                            <span class="info3 ConTooltip">
+                    <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihre Rufnummer ohne Leerzeichen oder Bindestrich ein. Beispiel: 01761234567" />
+                </span>
+                                        </li>
+                                        <li>
+                                            <label for="LostLoginNameType_email" class="required">E-Mail-Adresse:</label>
+                                            <input type="text" id="LostLoginNameType_email" name="LostLoginNameType[email]" required="required"    class="form-control" />
+
+                                            <span class="info3 ConTooltip">
+                    <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihre bei uns hinterlegte E-Mail-Adresse ein." />
+                </span>
+                                        </li>
+                                        <li>
+                                            <label for="LostLoginNameType_zipCode" class="required">Postleitzahl:</label>
+                                            <input type="text" id="LostLoginNameType_zipCode" name="LostLoginNameType[zipCode]" required="required"    class="form-control" />
+
+
+                                            <span class="info3 ConTooltip">
+                    <img alt="Info Icon" src="https://imagepool.premiumsim.de/global/img/SW/redesign/infoi.svg" data-tooltip="Geben Sie Ihre bei uns hinterlegte Postleitzahl ein." />
+                </span>
+                                        </li>
+                                        <li class="clearfix"></li>
+                                        <li class="clearfix"></li>
+                                        <li>
+
+
+
+                                            <div class="button1" >
+                                                <a class="btn btn-primary float-right submitOnEnter"
+                                                   id="ButtonBenutzernameanzeigen-LostLoginNameType-login-1"
+                                                   href="#"
+                                                   onclick="sendPostAndReplaceContent('/public/lostLoginName/send', 'BaseForm-LostLoginNameType-login-1', true);"
+                                                   title="">
+                                                    Benutzername anzeigen
+                                                </a>
+                                            </div>
+
+
+                                        </li>
+                                    </ol>
+                                </fieldset>
+                                <p class="link loginlinks">
+                                    <a href="#login" class="infocolor" data-toggle="collapse">
+                                        <span>Zurück zum Login</span>
+                                    </a>
+                                </p>
+                                <script>
+                                    $(document).ready( function() {
+                                        executeAfterPartialReload();
+                                    });
+                                </script>
+                                <input type="hidden" id="LostLoginNameType_isReadOnly" name="LostLoginNameType[isReadOnly]" /><input type="hidden" id="LostLoginNameType_csrf_token" name="LostLoginNameType[csrf_token]" value="88Y5dfK7N_p44FFxeDW4aXYFV_8Xbo90AfFimOaqdqw" />
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 loginTeaserBox">
+                        <a href="/servicewelt_app?_SID=0uf5sgpfbmdjeot05vhcvmb1r7">
+                            <div class="inner">
+                                <h5>PremiumSIM Servicewelt App</h5>
+                                <p>Alle Vorteile Ihrer persönlichen Servicewelt in einer App</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-12 loginTeaserBox">
+                        <a href="https://www.PremiumSIM.de" target="_blank">
+                            <div class="inner">
+                                <h5>Noch kein PremiumSIM Kunde?</h5>
+                                <p>Kunde werden und von unseren Angeboten profitieren</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="login-info" class="col-md-6">
+                <div id="login-list" class="login-list">
+                    <ul>
+                        <li class="vertrag">
+                            <div class="login-list-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+
+<g>
+    <g>
+        <path class="st0" d="M650.6,294.2c-1-2.1-2.2-3.8-3.8-5.4L503,154.5c-1.7-1.6-3.5-2.9-5.9-3.6c-2.1-0.9-4.5-1.3-6.8-1.3H256.8
+			c-19.9,0-36,15.1-36,33.5v151c0,9.2,8.1,16.8,17.9,16.8c9.8,0,17.9-7.6,17.9-16.8v-151h215.5v100.7c0,18.5,16.1,33.5,36,33.5H616
+			v268.5H400.5c-9.8,0-17.9,7.6-17.9,16.8c0,9.2,8.1,16.8,17.9,16.8H616c19.8,0,36-15.1,36-33.5V300.6
+			C651.9,298.5,651.6,296.2,650.6,294.2z M508.3,283.8v-77l82.4,77H508.3z"/>
+    </g>
+</g>
+                                    <g>
+        <g>
+            <path class="st0" d="M315.7,632.2L290.1,529c16-15.3,26.3-36.7,26.3-60.7c0-46.2-37.7-83.9-83.9-83.9s-83.9,37.7-83.9,83.9
+			c0,23.9,10.1,45.3,26.3,60.7L149,632.2c-1.6,6.3,0.7,13,5.8,17.2c5.1,4.1,12.2,4.8,18,1.9l59.5-29.8l59.6,29.8
+			c2.5,1.2,4.9,1.8,7.6,1.8c3.7,0,7.5-1.3,10.5-3.6C315.1,645.2,317.3,638.5,315.7,632.2z M239.7,587.6c-4.7-2.3-10.3-2.3-15,0
+			l-34.4,17.2l14.4-57.7c8.8,3,17.9,5,27.7,5s19-2,27.7-5l14.4,57.7L239.7,587.6z M232.3,518.8c-27.8,0-50.3-22.5-50.3-50.3
+			s22.5-50.3,50.3-50.3s50.3,22.5,50.3,50.3S260.1,518.8,232.3,518.8z"/>
+        </g>
+    </g>
+                                    <g>
+        <g>
+            <path class="st0" d="M411.7,250.3H311c-9.2,0-16.8,7.6-16.8,16.8c0,9.2,7.6,16.8,16.8,16.8h100.7c9.2,0,16.8-7.6,16.8-16.8
+			C428.5,257.8,420.9,250.3,411.7,250.3z"/>
+        </g>
+    </g>
+                                    <g>
+        <g>
+            <path class="st0" d="M547,351H345.6c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8H547c9.2,0,16.8-7.6,16.8-16.8
+			S556.2,351,547,351z"/>
+        </g>
+    </g>
+                                    <g>
+        <g>
+            <path class="st0" d="M546,451.6H378.2c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8H546c9.2,0,16.8-7.6,16.8-16.8
+			S555.3,451.6,546,451.6z"/>
+        </g>
+    </g>
+</svg>            </div>
+                            <div class="login-list-text">
+                                <h5>Vertrag</h5>
+                                <p>Hier finden Sie Details zu Ihrem Tarif und können Tarifoptionen buchen</p>
+                            </div>
+                        </li>
+
+                        <li class="angebote">
+                            <div class="login-list-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+
+<g>
+    <g>
+        <path class="st0" d="M644,156c-9.2-9.2-24.2-9.2-33.4,0L154.9,611.8c-9.2,9.2-9.2,24.2,0,33.4c4.6,4.6,10.6,6.9,16.7,6.9
+			c6.1,0,12.1-2.3,16.7-6.9L644,189.5C653.3,180.2,653.3,165.2,644,156z"/>
+    </g>
+</g>
+                                    <g>
+        <g>
+            <path class="st0" d="M260,149.3c-61.9,0-112.1,50.3-112.1,112.1S198.2,373.5,260,373.5s112.1-50.3,112.1-112.1
+			S321.9,149.3,260,149.3z M260,326.4c-35.8,0-64.9-29-64.9-64.9s29-64.9,64.9-64.9c35.8,0,64.9,29,64.9,64.9S295.9,326.4,260,326.4
+			z"/>
+        </g>
+    </g>
+                                    <g>
+        <g>
+            <path class="st0" d="M538.9,427.7c-61.9,0-112.1,50.3-112.1,112.1c0,61.9,50.3,112.1,112.1,112.1c61.9,0,112.1-50.2,112.1-112.1
+			S600.7,427.7,538.9,427.7z M538.9,604.8c-35.8,0-64.9-29-64.9-64.9s29-64.9,64.9-64.9s64.9,29,64.9,64.9S574.7,604.8,538.9,604.8z
+			"/>
+        </g>
+    </g>
+</svg>            </div>
+                            <div class="login-list-text">
+                                <h5>Angebote</h5>
+                                <p>Hier finden Sie Sparmöglichkeiten und können von unseren Angeboten profitieren</p>
+                            </div>
+                        </li>
+
+                        <li class="services">
+                            <div class="login-list-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+
+<g>
+    <g>
+        <path class="st0" d="M626.1,347.9l-35.2-6c-3.7-11.9-8.5-23.3-14.1-34.3l20.9-29.1c8.9-12.4,7.4-29.3-3.4-40.1L562.7,207
+			c-5.9-5.9-13.7-9.1-22-9.1c-6.5,0-12.6,2-18,5.8l-29.2,20.7c-11.4-6-23.3-10.9-35.6-14.6l-5.9-34.9c-2.4-15.1-15.4-26-30.7-26
+			h-44.3c-15.3,0-28.3,10.9-30.7,26l-6,35.8c-11.8,3.7-23.3,8.6-34.2,14.5l-28.9-20.9c-5.2-3.8-11.6-5.8-18.1-5.8
+			c-8.2,0-16.2,3.2-22,9.1L205.6,239c-10.7,10.7-12.2,27.6-3.4,40.1l21.1,29.7c-5.8,11-10.4,22.5-13.9,34.4l-34.9,5.9
+			c-15.1,2.4-26,15.3-26,30.6V424c0,15.3,10.9,28.3,26,30.7l35.8,6c3.7,11.8,8.6,23.3,14.5,34.2L204,523.8
+			c-8.9,12.4-7.4,29.3,3.4,40.1l31.4,31.4c5.9,5.9,13.7,9.1,22,9.1c6.5,0,12.6-2,18-5.8l29.7-21.1c10.5,5.7,21.8,10.2,33.1,13.7
+			l5.9,35.2c2.5,15.1,15.4,26,30.7,26h44.4c15.3,0,28.3-10.9,30.7-26l6-35.2c11.9-3.7,23.3-8.5,34.3-14.1l29.1,20.9
+			c5.2,3.8,11.6,5.8,18.1,5.8l0,0c8.2,0,16.1-3.2,22-9.1l31.4-31.4c10.7-10.7,12.2-27.6,3.4-40.1l-20.9-29.2
+			c5.8-11,10.5-22.5,14.1-34.3l35.2-5.9c15.1-2.5,26-15.4,26-30.7v-44.3C652.1,363.4,641.2,350.4,626.1,347.9z M623.7,422.8
+			c0,1.4-0.9,2.5-2.4,2.7l-44.2,7.3c-5.7,0.9-10.1,5-11.4,10.4c-4.1,15.4-10.2,30.2-18.3,44c-2.8,4.9-2.7,10.8,0.6,15.4l26,36.5
+			c0.7,1,0.6,2.7-0.3,3.6l-31.4,31.4c-0.7,0.7-1.5,0.8-2,0.8c-0.6,0-1.2-0.2-1.6-0.5l-36.4-26.1c-4.5-3.2-10.5-3.5-15.4-0.6
+			c-13.7,8.1-28.6,14.3-44,18.3c-5.6,1.4-9.5,5.9-10.4,11.4l-7.4,44.2c-0.2,1.4-1.4,2.4-2.7,2.4H378c-1.4,0-2.5-0.9-2.7-2.4
+			l-7.3-44.2c-0.9-5.7-5-10.1-10.4-11.4c-15.1-3.9-29.7-10-43.1-17.7c-2.2-1.3-4.7-1.9-7.2-1.9c-2.8,0-5.8,0.8-8.1,2.7l-36.7,26.2
+			c-0.5,0.3-1,0.5-1.6,0.5c-0.5,0-1.3-0.1-2-0.8l-31.5-31.3c-0.9-0.9-1-2.4-0.3-3.6l25.8-36.3c3.2-4.6,3.5-10.7,0.6-15.5
+			c-8.1-13.7-14.6-28.5-18.5-43.9c-1.5-5.4-5.9-9.4-11.4-10.4l-44.5-7.5c-1.4-0.2-2.4-1.4-2.4-2.7v-44.3c0-1.4,0.9-2.5,2.4-2.7
+			l43.9-7.3c5.7-0.9,10.2-5,11.5-10.5c3.9-15.4,10-30.4,18-44.2c2.8-4.9,2.5-10.8-0.7-15.4l-26.3-36.7c-0.7-1-0.6-2.7,0.3-3.6
+			l31.4-31.4c0.7-0.7,1.5-0.8,2-0.8c0.6,0,1.2,0.2,1.6,0.5l36.3,25.8c4.6,3.2,10.7,3.5,15.5,0.6c13.7-8.1,28.5-14.6,43.9-18.5
+			c5.4-1.5,9.4-5.9,10.4-11.4l7.5-44.5c0.2-1.4,1.4-2.4,2.7-2.4h44.3c1.4,0,2.5,0.9,2.7,2.4l7.3,43.9c0.9,5.7,5,10.2,10.5,11.5
+			c15.9,4.1,31.1,10.3,45.1,18.5c4.9,2.8,10.8,2.7,15.4-0.6l36.3-26.1c0.5-0.3,1-0.5,1.6-0.5c0.5,0,1.3,0.1,2,0.8l31.4,31.4
+			c0.9,0.9,1,2.4,0.3,3.6l-26,36.4c-3.2,4.5-3.5,10.5-0.6,15.4c8.1,13.7,14.3,28.6,18.3,44c1.4,5.6,5.9,9.5,11.4,10.4l44.2,7.4
+			c1.4,0.2,2.4,1.4,2.4,2.7v44.3h-0.1L623.7,422.8L623.7,422.8z"/>
+        <path class="st0" d="M400.3,292.1c-60,0-108.7,48.7-108.7,108.7s48.7,108.7,108.7,108.7S509,460.7,509,400.8
+			S460.2,292.1,400.3,292.1z M400.3,481c-44.3,0-80.2-36-80.2-80.2s36-80.2,80.2-80.2s80.2,36,80.2,80.2S444.6,481,400.3,481z"/>
+    </g>
+</g>
+</svg>            </div>
+                            <div class="login-list-text">
+                                <h5>Services</h5>
+                                <p>Hier finden Sie Service-Leistungen rund um Ihren Tarif</p>
+                            </div>
+                        </li>
+
+                        <li class="kundendaten">
+                            <div class="login-list-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+
+<path class="st0" d="M399.9,431.9c74.7,0,135.1-60.5,135.1-135.1c-0.2-74.6-60.7-134.7-135.3-134.7s-135.1,60.5-135.1,134.7
+	S325.2,431.9,399.9,431.9z M399.9,197.2c54.7,0,99.5,44.7,99.5,99.4s-44.7,99.4-99.5,99.4s-99.4-44.7-99.4-99.4
+	S345,197.2,399.9,197.2L399.9,197.2z"/>
+                                    <path class="st0" d="M166,642.8h469.2c9.8,0.1,17.8-7.8,17.8-17.6c0-0.1,0-0.2,0-0.3c0-93.3-75.9-169.5-169.5-169.5H317.7
+	c-93.2,0.1-169.5,76-169.5,169.6c-0.1,9.8,7.8,17.8,17.6,17.8C165.9,642.8,166,642.8,166,642.8L166,642.8z M317.7,491.1h165.8
+	c67,0,123.7,49.6,132.5,116H184.9C193.8,542,249.6,491.1,317.7,491.1L317.7,491.1z"/>
+</svg>            </div>
+                            <div class="login-list-text">
+                                <h5>Kundendaten</h5>
+                                <p>Ändern Sie einfach und schnell Ihre Anschrift oder Bankdaten.</p>
+                            </div>
+                        </li>
+
+                        <li class="Hilfe">
+                            <div class="login-list-img">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+
+<g>
+    <g>
+        <g>
+            <circle class="st0" cx="398.8" cy="528.7" r="26"/>
+            <path class="st0" d="M400.5,149C260.9,149,148,261.9,148,401.5S260.9,654,400.5,654S653,541.1,653,401.5S540.1,149,400.5,149z
+				 M400.5,614.5c-117.7,0-213.1-95.2-213.1-213.1s95.3-213,213.1-213s213.1,95.2,213.1,213.1S518.2,614.5,400.5,614.5z"/>
+            <path class="st0" d="M397.1,268.9c-45.8,0-83.2,37.3-83.2,83.2c0,11.4,9.4,20.8,20.8,20.8c11.4,0,20.8-9.4,20.8-20.8
+				c0-23,18.6-41.5,41.5-41.5c22.9,0,41.5,18.6,41.5,41.5s-18.6,41.5-41.5,41.5c-11.4,0-20.8,9.4-20.8,20.8v51.9
+				c0,11.4,9.4,20.8,20.8,20.8c11.4,0,20.8-9.4,20.8-20.8v-33.8c35.9-9.2,62.3-41.9,62.3-80.5C480.3,306.3,443,268.9,397.1,268.9z"
+            />
+        </g>
+    </g>
+</g>
+</svg>            </div>
+                            <div class="login-list-text">
+                                <h5>Hilfe und Kontakt</h5>
+                                <p>Hier finden Sie Informationen und können den Kundenservice kontaktieren</p>
+                            </div>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+            </div>
+            <!-- PWA-Popup für IOS global  --><script>
+            $(document).ready( function() {
+                var referrer = QueryString('referrer');
+                if ( typeof referrer === "undefined" || referrer.length == 0 ) { referrer = document.referrer; }
+                if (referrer) {
+                    if (referrer.indexOf("m2m-mobil") >= 0) {
+                        $(".partnerLogoM2M").show();
+                    }
+                    if (referrer.indexOf("discosurf") >= 0) {
+                        $(".partnerLogoDiscosurf").show();
+                    }
+                    if (referrer.indexOf("bigsim") >= 0) {
+                        $(".partnerLogoBig").show();
+                    }
+                    if (referrer.indexOf("telco") >= 0) {
+                        $(".partnerLogoTelco").show();
+                    }
+                }
+            });
+        </script>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footerTextColor collapse" id="footnotes">
+                    <ol>
+                    </ol>
+                    <div id="fussnotenInhalt2"></div>
+                </div>
+                <div class="linie">
+
+                    <div class="footernavi footernaviextracolor">
+                        <div class="navi-item">
+                            <a href="https://www.PremiumSIM.de" target="_blank"
+                               class="websiteLink">PremiumSIM Webseite</a>
+                        </div>
+                        <div class="navi-item after fussnotenlink-Datenschutz">
+                            <a href="/public/datenschutz?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_blank">Datenschutz</a>
+                        </div>
+                        <div class="navi-item after fussnotenlink-Impressum">
+                            <a href="/public/impressum?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" >Impressum</a>
+                        </div>
+                        <div class="navi-item after">
+                            <a href="#" id="deinCoronaLink">Corona-Pandemie</a>
+                        </div>
+                    </div>
+                    <div class="modal fade" id='coronaLayer' tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Corona-Pandemie</h5>
+                                </div>
+                                <div class="modal-body">
+                                    20. März 2020<br><h2>Maßnahmen der Drillisch Online GmbH und PremiumSIM zum Umgang mit der Corona-Pandemie</h2><p>Mit diesem Beitrag möchten wir Sie informieren, wie die Drillisch Online GmbH mit der aktuellen Corona-Pandemie umgeht. Wir verfolgen die Entwicklungen bereits seit Anfang des Jahres und haben unsere Notfallpläne regelmäßig angepasst. Dabei stehen die Aufrechterhaltung unserer Mobilfunkdienstleistungen sowie die Gesundheit unserer Mitarbeiter und Partner im Vordergrund.</p> <h3>Kundenservice</h3><p>Unser Kundenservice arbeitet von verschiedenen geographisch getrennten Standorten, die bei Bedarf gegenseitig Aufgaben übernehmen können. Im Rahmen der Arbeitsorganisation stellen wir sicher, dass ausreichende Kapazitäten für die Beantwortung von Kundenanfragen zur Verfügung stehen.</p><h3>Netzkapazität</h3><p>Die mobilen Netze unseres Netzpartners sind einer möglichen Zunahme der mobilen Datennutzung gewachsen. Zudem stehen wir mit unseren Partnern auf allen Ebenen fortlaufend in einem sehr engen Austausch, um zu jeder Zeit eine mobile Versorgung für unsere Kunden gewährleisten zu können.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                        Schließen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $('#deinCoronaLink').click(function () {
+                                $("#coronaLayer").modal('show');
+                            });
+                        });
+                    </script>                        <p class="footerhinweis">Preisangaben inkl. MwSt.<br />Irrtümer und Änderungen vorbehalten.</p>
+                    <div class="margeTop20 margeBot20">
+                        <a href="#" id="DeineCoronaApp"><img src="https://imagepool.premiumsim.de/global/service/banner/standard/corona_warn_app_1_1110x140.jpg" alt="Corona-Warn-App" title="Corona-Warn-App" class="width100"/></a>
+                    </div>
+                    <div class="modal fade" id='coronaLayerApp' tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Information</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Sie werden zu der Webseite der Bundesregierung weitergeleitet.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                                    <a href="https://www.bundesregierung.de/breg-de/themen/corona-warn-app" id="coronalLayerAppClose" target="_blank" class="btn btn-primary text-white">Weiter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready( function() {
+                            $('#DeineCoronaApp').click(function() {
+                                $("#coronaLayerApp").modal('show');
+                            });
+                            $('#coronalLayerAppClose').click(function() {
+                                $("#coronaLayerApp").modal('hide');
+                            });
+
+                        });
+
+                    </script>                                                <div id="scrollToFooter"></div>
+                    <div class="apple_overlay" id="overlay">
+                        <div class="contentWrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/getUserFaqAssetFile/website/846887f8db69ae5d8507e1a37c5fff933d717604.js"></script>
+<div id="globalImageAchtung" class="none">
+    <img alt="Achtung Icon" title="Achtung Icon" src="/191144/global/img/icon/achtung.png">
+</div>
+<div class="modal" id="invalid-login-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Das Formular war eine längere Zeit ohne Aktivität. Daher ist aus sicherheitstechnischen Gründen die Gültigkeit des Formulars abgelaufen. Sie können sich in Ihre persönliche Servicewelt wie gewohnt anmelden.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" class="btn btn-primary">Schließen</a>
+            </div>
+        </div>
+    </div>
+</div>            <script>
+    $(document).ready( function() {
+        $("body").on("click", ".info img, .info a, .info2 img, .info3 img, .info3 a, .info4 img", function() {
+            var tooltipContent = $(this).data("tooltip");
+            var tooltipHeadline = $(this).data("headline");
+            $(".overlayTooltipContent").html(tooltipContent);
+            if (tooltipHeadline) {
+                $(".overlayTooltipHeadline").html(tooltipHeadline);
+            } else {
+                $(".overlayTooltipHeadline").html("Information");
+            }
+            $( "#infoModal" ).modal('show');
+        });
+
+        $('#logoutLink').click(function() {
+            $( "#logoutModal" ).modal('show');
+        });
+    });
+</script>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title overlayTooltipHeadline">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="overlayTooltipContent">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabelLogout" style="border-bottom: none;">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Über <b>Logout</b> melden Sie sich aus Ihrer persönlichen Servicewelt ab.
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Abbrechen
+                </button>
+
+                <a id="logoutButton" href="/public/prelogout?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" class="btn btn-primary">Logout</a>
+
+            </div>
+
+
+
+            <div class="themen d-flex flex-row justify-content-center">
+
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/MeineMarke?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_parent">
+                        <ul>
+                            <li class="vertragWhite">
+                                <p class="text-center">Vertrag</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/Angebote?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_parent">
+                        <ul>
+                            <li class="angeboteWhite">
+                                <p class="text-center">Angebote</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/Services?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_parent">
+                        <ul>
+                            <li class="servicesWhite">
+                                <p class="text-center">Services</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/MeineDaten?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_parent">
+                        <ul>
+                            <li class="kundendatenWhite">
+                                <p class="text-center">Kundendaten</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="app-list2 themenkasten">
+                    <a href="/overview/HilfeFaq?_SID=0uf5sgpfbmdjeot05vhcvmb1r7" target="_parent">
+                        <ul>
+                            <li class="hilfeWhite">
+                                <p class="text-center">Hilfe</p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="oldBrowserModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabelBrowser" style="border-bottom: none;">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Sie verwenden einen veralteten Browser. Um die Servicewelt nutzen zu können, verwenden Sie bitte einen aktuellen Browser.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
