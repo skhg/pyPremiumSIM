@@ -21,7 +21,7 @@ pprint(vars(data_used))
 ```
 returns:
 ```python
-{'consumed_data_gb': 0.735859375,
+{'consumed_data_gb': 0.73585937,
  'tariff_total_data_gb': 20.0,
  'used_percentage': 3.7}
  ```
