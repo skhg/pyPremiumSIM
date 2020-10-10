@@ -1,5 +1,5 @@
 # pyPremiumSIM
-[![Build Status](https://travis-ci.org/skhg/pypremiumsim.svg?branch=main)](https://travis-ci.org/skhg/pypremiumsim) [![PyPI](https://img.shields.io/pypi/v/pypremiumsim.svg)](https://pypi.python.org/pypi/pypremiumsim/) [![Codecov](https://img.shields.io/codecov/c/github/skhg/pypremiumsim.svg)](https://codecov.io/gh/skhg/pypremiumsim)
+[![PyPI](https://img.shields.io/pypi/v/pypremiumsim.svg)](https://pypi.python.org/pypi/pypremiumsim/) [![Codecov](https://img.shields.io/codecov/c/github/skhg/pypremiumsim.svg)](https://codecov.io/gh/skhg/pypremiumsim)
 
 A Python API for accessing your [PremiumSIM.de](https://www.premiumsim.de/) account balance &amp; usage stats. This is an unoffical API and the author/contributors are in no way connected to PremiumSIM or Drillisch. The API provides a method to:
 * Get your current month's data balances (consumed and remaining GB)
