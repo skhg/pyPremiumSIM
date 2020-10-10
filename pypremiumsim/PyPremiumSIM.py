@@ -40,9 +40,9 @@ class PremiumSimSession:
         expectedLoginString = "Willkommen in Ihrer persönlichen Servicewelt"
         loginFailedString = "Die Angaben sind nicht korrekt."
 
-        if expectedLoginString in login_result_content:
+        if expectedLoginString.encode() in login_result_content:
             return True
-        elif loginFailedString in login_result_content:
+        elif loginFailedString.encode() in login_result_content:
             raise IOError("Your credentials are incorrect.")
         else:
             raise IOError("Unknown error.")
