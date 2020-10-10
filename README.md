@@ -13,7 +13,7 @@ It's very easy to use. Try the following to get your balance data:
 from pypremiumsim import *
 from pprint import pprint
 
-session = pypremiumsim.PremiumSimSession()
+session = PremiumSimSession()
 session.try_login("<username>", "<password>")
 data_used = session.current_month_data_usage()
 
