@@ -37,8 +37,8 @@ class PremiumSimSession:
         return csrf
 
     def __handle_login_response(self, login_result_content):
-        expectedLoginString = "Willkommen in Ihrer persönlichen Servicewelt"
-        loginFailedString = "Die Angaben sind nicht korrekt."
+        expectedLoginString = u"Willkommen in Ihrer pers" # cut off before the umlaut because I can't get unicode working correctly
+        loginFailedString = u"Die Angaben sind nicht korrekt."
 
         if expectedLoginString.encode() in login_result_content:
             return True
