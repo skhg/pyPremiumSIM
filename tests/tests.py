@@ -48,5 +48,6 @@ class TestLoginMethod(unittest.TestCase):
 
             self.assertEqual(result.__dict__, expected.__dict__)
 
+
 if __name__ == '__main__':
     unittest.main()

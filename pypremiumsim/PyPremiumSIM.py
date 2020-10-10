@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import re
 from . import DataVolume
 
+
 class PremiumSimSession:
 
     def __init__(self):
@@ -59,7 +60,7 @@ class PremiumSimSession:
                 '_SID': captured_sid
             }
 
-            login_validation_request = requests.Request('POST',  self.__login_validation_url(), data=payload)
+            login_validation_request = requests.Request('POST', self.__login_validation_url(), data=payload)
             prepared_login_request = self.__session.prepare_request(login_validation_request)
 
             login_validation_response = self.__session.send(prepared_login_request)
@@ -110,8 +111,7 @@ class PremiumSimSession:
         data_usage_result = DataVolume.DataVolume(total_data_packs_gb, gb_used, percent_used)
         return data_usage_result
 
-
-    def get_data_usage(self):
+    def current_month_data_usage(self):
         data_usage_response = self.__session.get(self.__data_usage_url())
 
         return self.__handle_data_usage_response(data_usage_response.content)
