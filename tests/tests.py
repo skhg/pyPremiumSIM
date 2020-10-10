@@ -37,14 +37,14 @@ class TestLoginMethod(unittest.TestCase):
 
             self.assertTrue('Your credentials are incorrect' in str(context.exception))
 
-    def test_handle_data_usage_response_parses_content(self):
+    def test_handle_data_usage_response_singlePack_parses_content(self):
         session = PremiumSimSession()
 
         with(open(sampledatadir + "data_usage_page.html", "r")) as f:
             page = f.read()
             result = session._PremiumSimSession__handle_data_usage_response(page)
 
-            expected = DataVolume(u"20,00 GB", u"749,04 MB", u"3,7 %")
+            expected = DataVolume(20.0, 0.731484375, 3.7)
 
             self.assertEqual(result.__dict__, expected.__dict__)
 

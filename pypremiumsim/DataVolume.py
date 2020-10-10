@@ -4,7 +4,7 @@
 
 class DataVolume:
 
-    def __init__(self, tariff_total_data, consumed_data, remaining_percentage):
-        self.tariff_total_data = tariff_total_data
-        self.consumed_data = consumed_data
-        self.remaining_percentage = remaining_percentage
+    def __init__(self, tariff_total_data_gb, consumed_data_gb, used_percentage):
+        self.tariff_total_data_gb = tariff_total_data_gb
+        self.consumed_data_gb = consumed_data_gb
+        self.used_percentage = used_percentage

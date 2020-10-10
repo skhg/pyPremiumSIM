@@ -6,7 +6,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from . import DataVolume
-from decimal import Decimal
 
 class PremiumSimSession:
 
@@ -78,10 +77,16 @@ class PremiumSimSession:
         unit = matches.group(2)
 
         if unit == "GB":
-            return Decimal(size)
+            return float(size)
         elif unit == "MB":
-            return Decimal(size) / 1024
+            return float(size) / 1024
 
+    def __percent_value_to_numeric(self, percentage_text):
+        matches = re.search(r'(\d+,\d+)\s%', percentage_text.replace("\n", "").strip())
+
+        percent = matches.group(1).replace(",", ".")
+
+        return float(percent)
 
     def __handle_data_usage_response(self, data_usage_page_content):
         data_usage_soup = BeautifulSoup(data_usage_page_content, self.__parser_name)
@@ -89,17 +94,24 @@ class PremiumSimSession:
         current_month = data_usage_soup.find(id="currentMonth")
         data_packs = current_month.find(text="Verfügbares Datenvolumen").parent.parent
 
-        total_data_packs = Decimal()
+        total_data_packs_gb = 0.0
 
         for child_div in data_packs.find_all('div'):
             pack_gb_size = self.__data_pack_description_to_numeric_gigabytes(child_div.text)
-            total_data_packs = total_data_packs + pack_gb_size
+            total_data_packs_gb = total_data_packs_gb + pack_gb_size
 
-        return DataVolume("1.4", "1.2", "1.3")
+        data_usage_div = current_month.find(class_="dataUsageOverlayInner")
+        used_text = data_usage_div.findChildren("div")[0].text
+        gb_used = self.__data_pack_description_to_numeric_gigabytes(used_text)
+
+        percent_used_text = data_usage_div.findChildren("div")[1].text
+        percent_used = self.__percent_value_to_numeric(percent_used_text)
+
+        data_usage_result = DataVolume.DataVolume(total_data_packs_gb, gb_used, percent_used)
+        return data_usage_result
 
 
     def get_data_usage(self):
         data_usage_response = self.__session.get(self.__data_usage_url())
 
-        print(data_usage_response.content)
-
+        return self.__handle_data_usage_response(data_usage_response.content)
