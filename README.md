@@ -1,3 +1,5 @@
+This is a fork of the pyPremiumSIM to update the web scraper to the latest Website layout.
+
 # pyPremiumSIM
 [![PyPI](https://img.shields.io/pypi/v/pypremiumsim.svg)](https://pypi.python.org/pypi/pypremiumsim/) [![Codecov](https://img.shields.io/codecov/c/github/skhg/pypremiumsim.svg)](https://codecov.io/gh/skhg/pypremiumsim) ![PyPI - Downloads](https://img.shields.io/pypi/dm/pypremiumsim)
 
