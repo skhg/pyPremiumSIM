@@ -19,7 +19,7 @@ setup(
     url='https://github.com/lmaertin/pyPremiumSIM',
     packages=['pypremiumsim'],
     install_requires=[
-        'requests',
+        'aiohttp',
         'bs4'
     ],
     tests_require=[

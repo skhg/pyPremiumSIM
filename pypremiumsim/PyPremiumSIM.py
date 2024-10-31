@@ -1,19 +1,20 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-
-import requests
+import aiohttp
 from bs4 import BeautifulSoup
 import re
 from . import DataVolume
-
 
 class PremiumSimSession:
 
     def __init__(self):
         self.__premiumsim_service_url = "https://service.premiumsim.de"
-        self.__session = requests.session()
+        self.__session = aiohttp.ClientSession()  # Create session here
         self.__parser_name = "html.parser"
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.__session.close()  # Close session
 
     def __login_page_url(self):
         return self.__premiumsim_service_url + "/"
@@ -24,9 +25,9 @@ class PremiumSimSession:
     def __data_usage_url(self):
         return self.__premiumsim_service_url + "/mytariff/invoice/showGprsDataUsage"
 
-    def __login_page_tokens(self, login_page_response):
-        csrf = self.__get_csrf_for_login(login_page_response.content)
-        sid = login_page_response.cookies["_SID"]
+    async def __login_page_tokens(self, login_page_response):
+        csrf = self.__get_csrf_for_login(await login_page_response.text())
+        sid = login_page_response.cookies["_SID"].value
 
         return csrf, sid
 
@@ -37,7 +38,7 @@ class PremiumSimSession:
         return csrf
 
     def __handle_login_response(self, login_result_content):
-        expectedLoginString = u"Zeit neu starten"  # cut off before the umlaut because I can't get unicode working correctly
+        expectedLoginString = u"Zeit neu starten"
         loginFailedString = u"Die Angaben sind nicht korrekt."
 
         if expectedLoginString.encode() in login_result_content:
@@ -47,31 +48,21 @@ class PremiumSimSession:
         else:
             raise IOError("Unknown error.")
 
-    def try_login(self, user, passwd):
-        login_page_response = self.__session.get(self.__login_page_url())
-        captured_csrf, captured_sid = self.__login_page_tokens(login_page_response)
+    async def try_login(self, user, passwd):
+        async with self.__session.get(self.__login_page_url()) as login_page_response:
+            captured_csrf, captured_sid = await self.__login_page_tokens(login_page_response)
 
-        try:
-            payload = {
-                'UserLoginType[alias]': user,
-                'UserLoginType[password]': passwd,
-                'UserLoginType[logindata]': '',
-                'UserLoginType[_token]': captured_csrf,
-                '_SID': captured_sid
-            }
+        payload = {
+            'UserLoginType[alias]': user,
+            'UserLoginType[password]': passwd,
+            'UserLoginType[logindata]': '',
+            'UserLoginType[_token]': captured_csrf,
+            '_SID': captured_sid
+        }
 
-
-
-            login_validation_request = requests.Request('POST', self.__login_validation_url(), data=payload)
-            prepared_login_request = self.__session.prepare_request(login_validation_request)
-
-            login_validation_response = self.__session.send(prepared_login_request)
-
-            return self.__handle_login_response(login_validation_response.content)
-
-        except requests.exceptions.ConnectionError:
-            # The most likely failure case is that we're offline so fail gracefully here
-            return False
+        async with self.__session.post(self.__login_validation_url(), data=payload) as login_validation_response:
+            login_result_content = await login_validation_response.read()
+            return self.__handle_login_response(login_result_content)
 
     def __data_pack_description_to_numeric_gigabytes(self, data_pack_description):
         matches = re.search(r'(\d+,\d+)\s(\w+)', data_pack_description.replace("\n", "").strip())
@@ -86,7 +77,6 @@ class PremiumSimSession:
 
     def __percent_value_to_numeric(self, percentage_text):
         match = re.search(r"left:\s*([\d.]+)%", percentage_text)
-
         return float(match.group(1))
 
     def __handle_data_usage_response(self, data_usage_page_content):
@@ -94,11 +84,11 @@ class PremiumSimSession:
 
         current_month = data_usage_soup.find(id="tab-cur")
 
-        #verfuegbares datenvolumen
+        # Available data volume
         data_packs_div = current_month.find(class_="e-data_usage_meter-legend inclusive")
         total_data_packs_gb = self.__data_pack_description_to_numeric_gigabytes(data_packs_div.text)
         
-        #verbrauchtes datenvolumen
+        # Used data volume
         data_usage_div = current_month.find(class_="e-data_usage_meter-legend usage")
         gb_used = self.__data_pack_description_to_numeric_gigabytes(data_usage_div.text)
 
@@ -108,7 +98,7 @@ class PremiumSimSession:
         data_usage_result = DataVolume.DataVolume(total_data_packs_gb, gb_used, percent_used)
         return data_usage_result
 
-    def current_month_data_usage(self):
-        data_usage_response = self.__session.get(self.__data_usage_url())
-
-        return self.__handle_data_usage_response(data_usage_response.content)
+    async def current_month_data_usage(self):
+        async with self.__session.get(self.__data_usage_url()) as data_usage_response:
+            data_usage_content = await data_usage_response.text()
+            return self.__handle_data_usage_response(data_usage_content)
