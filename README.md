@@ -11,15 +11,24 @@ A Python API for accessing your [PremiumSIM.de](https://www.premiumsim.de/) acco
 
 ## Usage
 It's very easy to use. Try the following to get your balance data:
+
+Updated to use async calls.
 ```python
+import asyncio
 from pypremiumsim import *
 from pprint import pprint
 
-session = PremiumSimSession()
-session.try_login("<username>", "<password>")
-data_used = session.current_month_data_usage()
+async def main():
+    username = "<username>"
+    password = "<password>"
 
-pprint(vars(data_used))
+    async with PremiumSimSession() as session:
+        await session.try_login(username, password)
+        data_used = await session.current_month_data_usage()
+        pprint(vars(data_used))
+
+# Run the async main function
+asyncio.run(main())
 ```
 returns:
 ```python
