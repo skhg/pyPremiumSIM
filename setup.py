@@ -9,17 +9,17 @@ with open("README.md", "r") as fh:
 
 setup(
     name='pypremiumsim',
-    version='0.0.0',
+    version='0.0.1',
     description="PremiumSIM API (Unofficial). Access basic account details and status information.",
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords='PremiumSIM mobile phone handy balance status web germany deutschland scraper api',
     author='Jack Higgins',
     author_email='pypi@jackhiggins.ie',
-    url='https://github.com/skhg/pyPremiumSIM',
+    url='https://github.com/lmaertin/pyPremiumSIM',
     packages=['pypremiumsim'],
     install_requires=[
-        'requests',
+        'aiohttp',
         'bs4'
     ],
     tests_require=[
