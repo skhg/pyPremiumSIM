@@ -83,16 +83,24 @@ class PremiumSimSession:
         data_usage_soup = BeautifulSoup(data_usage_page_content, self.__parser_name)
 
         current_month = data_usage_soup.find(id="tab-cur")
+        if current_month is None:
+            raise ValueError("Expected element with id for current month not found. The HTML structure may have changed.")
 
         # Available data volume
         data_packs_div = current_month.find(class_="e-data_usage_meter-legend inclusive")
+        if data_packs_div is None:
+            raise ValueError("Expected element with class for inclusive data volume not found. The HTML structure may have changed.")
         total_data_packs_gb = self.__data_pack_description_to_numeric_gigabytes(data_packs_div.text)
         
         # Used data volume
         data_usage_div = current_month.find(class_="e-data_usage_meter-legend usage")
+        if data_usage_div is None:
+            raise ValueError("Expected element with class for used data volume not found. The HTML structure may have changed.")
         gb_used = self.__data_pack_description_to_numeric_gigabytes(data_usage_div.text)
 
         percent_used_div = current_month.find(class_="e-data_usage_meter-used_data block relative")
+        if percent_used_div is None:
+            raise ValueError("Expected element with class for percentage used not found. The HTML structure may have changed.")
         percent_used = self.__percent_value_to_numeric(percent_used_div["style"])
 
         data_usage_result = DataVolume.DataVolume(total_data_packs_gb, gb_used, percent_used)
